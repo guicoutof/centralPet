@@ -13,16 +13,24 @@ function House(props){
         <View style={styles.main}>
             <Button buttonStyle={styles.button} titleStyle={{color:'gray'}} title="Usar minha localização" 
                 icon={
-                    <Icon
-                    name="location-arrow"
-                    type='font-awesome'
-                    size={15}
-                    color="#F08080"
-                    />
+                    <Icon name="location-arrow" type='font-awesome' size={15} color="#F08080" />
                 }
                 type="outline" onPress={() => {} }
             />
-            <Icon raised name='edit' type='font-awesome' color='blue'size={16} onPress={() => { 
+            <Button buttonStyle={styles.buttonEdit} title="Editar" type="outline"
+                onPress={() => { 
+                    const newLocal = {
+                        cep:localEdit.cep,
+                        state:localEdit.state,
+                        city:localEdit.city,
+                        nb:localEdit.nb,
+                        street:localEdit.street,
+                        disabled:false
+                    }
+                    setLocalEdit(newLocal)
+                 } }
+            />
+            {/* <Icon raised name='edit' type='font-awesome' color='blue'size={16} onPress={() => { 
                 const newLocal = {
                     cep:localEdit.cep,
                     state:localEdit.state,
@@ -32,7 +40,7 @@ function House(props){
                     disabled:false
                 }
                 setLocalEdit(newLocal)
-             } } /> 
+             } } />  */}
             <Text style={styles.text} >CEP</Text>
             <Input inputStyle={styles.input} disabled={localEdit.disabled} placeholder='19060440' value={localEdit.cep} onChangeText={event => { 
                 const newLocal = {
@@ -89,14 +97,15 @@ function House(props){
                 }
                 setLocalEdit(newLocal)
              }}  />
-            <Button buttonStyle={styles.buttonSave} titleStyle={{color:'white'}} title="Salvar" 
+            <Button buttonStyle={styles.buttonSave} titleStyle={{color:'mediumseagreen'}} title="Salvar" 
                 icon={
                     <Icon
                     name="save"
                     size={15}
-                    color="white"
+                    color="mediumseagreen"
                     />
                 }
+                type="outline"
                 onPress={() => { 
                     const newLocal = {
                         cep:localEdit.cep,

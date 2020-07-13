@@ -35,14 +35,21 @@ export default StyleSheet.create({
     justifyContent:'space-around'
   },
 
+  buttonEdit: {
+    margin: 16,
+    width: 72,
+    borderRadius: 5,
+    justifyContent:'space-evenly',
+  },
+
   buttonSave: {
-    width:200,
+    width:120,
     alignSelf:'center',
     margin: 16,
-    backgroundColor:'mediumseagreen',
     borderRadius: 5,
     justifyContent:'space-around',
     marginBottom:50,
+    borderColor:'mediumseagreen'
   },
 
 });

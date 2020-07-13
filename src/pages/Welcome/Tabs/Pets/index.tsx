@@ -6,7 +6,7 @@ import styles from './styles';
 function Pets(props){
     return(
     <View style={styles.main}>
-        <Icon style={{marginLeft:'auto'}} raised name='plus' type='font-awesome' color='green'size={16} onPress={() => console.log('hello')} /> 
+        <Icon style={{marginLeft:'auto'}} raised name='plus' type='font-awesome' color='green'size={16} onPress={ () => {} } /> 
         {
             props.pets.map((pet,key)=>(
                 <View key={key} style={{padding:8}}>

@@ -10,6 +10,7 @@ function Home({ navigation }){
 
     const [email,setEmail] = React.useState('email')
     const [password,setPassword] = React.useState('senha')
+    const [securityPass,setSecurityPass] = React.useState(true)
 
     function nextPage(){
         navigation.navigate('Drawer', {screen: 'Welcome'} )
@@ -27,12 +28,15 @@ function Home({ navigation }){
                     <Text style={styles.text} >Email</Text>
                     <Input inputStyle={styles.input} autoCompleteType='email' placeholder='exemplo@email.com' value={email} onChangeText={event => setEmail(event)}  />
                     <Text style={styles.text} >Senha</Text>
-                    <Input inputStyle={styles.input} secureTextEntry={true} 
+                    <Input inputStyle={styles.input} secureTextEntry={securityPass} 
                     rightIcon={
                         <Icon
                         name='eye'
                         size={24}
-                        color='gray'/>
+                        color='gray'
+                        onPress={()=> setSecurityPass(!securityPass) }
+                        />
+                        
                         }
                     value={password} onChangeText={password => setPassword(password)} />
                     <Button buttonStyle={styles.buttonSolid}title="Entrar" onPress={() => nextPage()}/>
